@@ -1,13 +1,13 @@
 import React from 'react';
-import Dog from './Dog';
-import Color from './Color';
+import Header from './Header';
+
+import ColorPicker from './ColorPicker';
 
 export default function App() {
   return (
     <>
-    <h1>Hello World</h1>
-    <Dog name='spot'/>
-    <Color />
+      <Header />
+      <ColorPicker colors={['red', 'yellow', 'blue']} />
     </>
   );
 }

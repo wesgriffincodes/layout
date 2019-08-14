@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Dog({ name, age, weight }) {
+const Dog = ({ name, age, weight }) => {
   return (
     <dl>
       <dt>Name:</dt>
@@ -14,7 +14,7 @@ function Dog({ name, age, weight }) {
       <dd>{weight}</dd>
     </dl>
   );
-}
+};
 
 Dog.propTypes = {
   name: PropTypes.string.isRequired,
