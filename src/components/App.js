@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Header from './Header';
+import TextColor from './TextColor';
+import TextFormatter from './TextFormatter';
 
-import ColorPicker from './ColorPicker';
 
-export default function App() {
-  return (
-    <>
-      <Header />
-      <ColorPicker colors={['red', 'yellow', 'blue']} />
-    </>
-  );
+class App extends Component {
+
+
+  render() {
+    return (
+      <>
+        <Header />
+        <TextColor />
+        <TextFormatter />
+      </>
+    );
+  }
 }
   
+export default App;

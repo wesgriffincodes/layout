@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ColorPicker.css';
+import Increment from './Increment';
 
 class ColorPicker extends Component {
     state = {
+      counter: 0,
       count: 0,
-      color: 'white'
+      color: 'white',
+      name: 'bob'
     }
+
+
 
     static propTypes = {
       colors: PropTypes.arrayOf(PropTypes.string).isRequired
@@ -17,6 +22,16 @@ class ColorPicker extends Component {
         return { color : color, count: state.count + 1 };
       });
     }
+
+    // loop through array of names on button click
+    nameChange = () => {
+      const names = ['jim', 'nick', 'terrel'];
+
+      this.setState(state => {
+        return { counter: state.counter + 1, name: names[state.counter] };
+      });
+    }
+    // -------
 
     render() {
       const { colors } = this.props;
@@ -32,8 +47,12 @@ class ColorPicker extends Component {
       return (
         <section className={styles.ColorPicker}>
           <h1>hey</h1>
+          <h2>{this.state.name}</h2>
+          <button onClick={this.nameChange}>huh</button>
           <div style={{ backgroundColor: this.state.color }}>color</div>
           {colorElements}
+          <p>{this.state.count}</p>
+          <Increment />
         </section>
       );
     }
